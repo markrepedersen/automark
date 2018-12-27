@@ -1,5 +1,5 @@
-import {GoogleMainPage} from "../src/pages/GoogleMainPage";
-import {Chrome} from "../src/lib/utils/browsers/chrome";
+import {GoogleMainPage} from "../../src/pages/GoogleMainPage";
+import {Chrome} from "../../src/lib/utils/browsers/chrome";
 
 describe('Google Search Spec', function () {
     const chrome: Chrome = new Chrome();

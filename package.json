@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "main": "main.ts",
   "bin": {
-    "autotest": "main.ts"
+    "autotest": "dist/main.js"
   },
   "scripts": {
     "dev": "tsc --watch"
