@@ -20,7 +20,6 @@ import {
 import {Options} from "selenium-webdriver/chrome";
 import {Validatable, Validator} from "../../validators/Validator";
 import {AwaitableWebComponent, Button, WebComponent} from "..";
-import {dynamicWait} from "../decorators/dynamicWait";
 import {retry} from "../decorators/retry";
 import Logger from "../logger";
 import {NewablePage, Page} from "../../../pages/page";
@@ -50,6 +49,8 @@ export abstract class Browser {
 
     protected isValid: boolean = false;
 
+    protected load: number = 0;
+
     /**
      * Creates a new {@class Browser} object. This constructor will
      * configure all settings to be used in the session.
@@ -63,6 +64,14 @@ export abstract class Browser {
             .build();
         this.logger = new Logger(this.driver);
         this.valid = true;
+    }
+
+    public get loadTime() {
+        return this.load;
+    }
+
+    public set loadTime(loadTime: number) {
+        this.load = loadTime;
     }
 
     /**
@@ -102,10 +111,8 @@ export abstract class Browser {
      * forever.
      *
      * @param {WaitCondition | WaitCondition[]} conditions
-     * @throws TestFailureError if an error toast is seen on the screen
      * @returns {Promise<void>}
      */
-    @dynamicWait
     public async waitForAny(...conditions: WaitCondition[]): Promise<void> {
         await this.driver.wait(async () => {
             for (const condition of conditions) {

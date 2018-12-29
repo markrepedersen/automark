@@ -13,7 +13,7 @@ export function retry(condition: ErrorCondition = (e: any) => true, retries: num
         descriptor.value = async function (...args: any[]) {
             const retryFn = async (retries: number) => {
                 try {
-                    return await originalMethod.apply(this, args);
+                    return originalMethod.apply(this, args);
                 } catch (error) {
                     if (condition(error) && retries > 0) {
                         await retryFn(--retries)
@@ -21,7 +21,7 @@ export function retry(condition: ErrorCondition = (e: any) => true, retries: num
                 }
             };
 
-            return await retryFn(retries);
+            return retryFn(retries);
         };
     };
 }

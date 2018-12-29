@@ -1,8 +1,8 @@
 import {error, ThenableWebDriver} from "selenium-webdriver";
-import {Browser, WebComponent} from "../../src/lib/utils";
+import {Browser, WebComponent} from "../../../src/lib/utils";
 import {join, posix} from "path";
-import {config} from "../../main";
-import {Chrome} from "../../src/lib/utils/browsers/chrome";
+import {config} from "../../../main";
+import {Chrome} from "../../../src/lib/utils/browsers/chrome";
 import {expect, should} from 'chai';
 
 describe("Browser Tests", function () {

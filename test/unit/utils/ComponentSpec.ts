@@ -1,8 +1,8 @@
 import {ThenableWebDriver} from "selenium-webdriver";
 import {join} from "path";
-import {Browser, WebComponent} from "../../src/lib/utils";
-import {config} from "../../main";
-import {Chrome} from "../../src/lib/utils/browsers/chrome";
+import {Browser, WebComponent} from "../../../src/lib/utils";
+import {config} from "../../../main";
+import {Chrome} from "../../../src/lib/utils/browsers/chrome";
 import {expect} from 'chai';
 
 describe("Test suite for components", function () {
