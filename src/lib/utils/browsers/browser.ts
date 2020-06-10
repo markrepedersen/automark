@@ -60,7 +60,7 @@ export abstract class Browser {
   public constructor(type: BrowserTypes, options?: BrowserOptions) {
     this.driver = new Builder()
       .forBrowser(type)
-      .withCapabilities(this.setBrowserCapabilities())
+      .withCapabilities(this.setBrowserCapabilities(options))
       .build();
     this.logger = new Logger(this.driver);
     this.valid = true;
@@ -205,8 +205,8 @@ export abstract class Browser {
    * for this session.
    * @returns {Capabilities}
    */
-  private setBrowserCapabilities(): Capabilities {
-    const browserArguments: Array<string> = this.getBrowserArguments();
+  private setBrowserCapabilities(options?: BrowserOptions): Capabilities {
+    const browserArguments: Array<string> = this.getBrowserArguments(options);
     const perfLoggingPrefs: any = {enableNetwork: true};
     return new Options()
       .addArguments(...browserArguments)
@@ -219,14 +219,10 @@ export abstract class Browser {
    * Retrieve the arguments to be passed to the driver.
    * @returns {Array<string>}
    */
-  private getBrowserArguments(): Array<string> {
+  private getBrowserArguments(options?: BrowserOptions): Array<string> {
     const args: Array<string> = [];
-    if (this.headless) {
-      console.log("[INFO] Running in headless mode.");
-    }
-    args.push("headless");
 
-    if (this.maximized) {
+    if (options?.maximized) {
       console.log("[INFO] Maximizing screen.");
       args.push("start-maximized");
     } else {
@@ -234,6 +230,9 @@ export abstract class Browser {
         `[INFO] Using screen resolution of ${this.width}x${this.height}.`
       );
       args.push(`window-size=${this.width},${this.height}`);
+    }
+    if (options?.headless) {
+      args.push("headless");
     }
     args.push("port=0");
     args.push("disable-infobars"); // disabling infobars

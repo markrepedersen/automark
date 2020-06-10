@@ -10,7 +10,7 @@ describe("Browser Tests", function () {
   this.timeout(400000);
 
   before(async function () {
-    browser = new Chrome();
+    browser = new Chrome({maximized: true, headless: false});
     should();
   });
 
