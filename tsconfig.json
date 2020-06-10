@@ -1,21 +1,21 @@
 {
-    "include": [
-        "./src/**/*.ts",
-        "./test/**/*.ts"
-    ],
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "moduleResolution": "node",
+        "target": "es2018",
+        "module": "commonjs",
+        "pretty": true,
+        "strict": true,
+        "outDir": "./dist",
+        "sourceMap": true,
         "lib": [
             "es2018"
         ],
-        "sourceMap": true,
-        "outDir": "./dist",
-        "strict": true,
-        "pretty": true,
-        "module": "commonjs",
-        "target": "es2018"
-    }
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./test/**/*.ts"
+    ]
 }

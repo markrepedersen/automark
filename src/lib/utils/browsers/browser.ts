@@ -223,8 +223,9 @@ export abstract class Browser {
     const args: Array<string> = [];
     if (this.headless) {
       console.log("[INFO] Running in headless mode.");
-      args.push("headless");
     }
+    args.push("headless");
+
     if (this.maximized) {
       console.log("[INFO] Maximizing screen.");
       args.push("start-maximized");
@@ -237,6 +238,7 @@ export abstract class Browser {
     args.push("port=0");
     args.push("disable-infobars"); // disabling infobars
     args.push("--disable-extensions"); // disabling extensions
+    args.push("--disable-notifications"); // disable notifications
     args.push("--disable-gpu"); // applicable to windows os only
     args.push("--disable-dev-shm-usage"); // overcome limited resource problems
     args.push("--no-sandbox"); // Bypass OS security model

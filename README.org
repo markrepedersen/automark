@@ -1,3 +1,6 @@
+* Dependencies
+[[https://chromedriver.chromium.org/][chromedriver]] must be installed.
+
 * Usage
 #+BEGIN_SRC bash
 git clone https://github.com/markrepedersen/automark.git
@@ -6,7 +9,7 @@ cd automark && npm install
 
 * Example
 
-Inside the `src/pages/` directory you can find some demo pages. The following is an example of how to design a test:
+Inside the `src/pages/` directory you can find some demo pages. The following is an example of how to design a test. It's using Mocha and Chai, but you can use any testing frameworks you want.
 
 #+BEGIN_SRC typescript
 import {should} from "chai";

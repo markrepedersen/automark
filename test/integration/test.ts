@@ -1,13 +1,13 @@
 import {should} from "chai";
 import {Browser} from "../../src/lib/utils/browsers/browser";
 import {Chrome} from "../../src/lib/utils/browsers/chrome";
-import {config} from "../../main";
 import {FacebookLoginPage} from "../../src/pages/FacebookLoginPage";
+import {FacebookHomePage} from "../../src/pages/FacebookHomePage";
 
 describe("Browser Tests", function () {
   let browser: Browser;
 
-  this.timeout(config.timeout);
+  this.timeout(400000);
 
   before(async function () {
     browser = new Chrome();
@@ -19,9 +19,8 @@ describe("Browser Tests", function () {
     await browser.navigate(FacebookLoginPage.URL);
     await browser.waitUntilPageHasLoaded(FacebookLoginPage);
     await loginPage.login("username", "pw");
+    await browser.waitUntilPageHasLoaded(FacebookHomePage);
   });
 
-  after(async () => {
-    await browser.quit();
-  });
+  after(async () => await browser.quit());
 });

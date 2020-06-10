@@ -303,7 +303,7 @@ export class WebComponent {
     /**
      * Get the attribute of an element named {@param attribute}
      * @param {string} attribute
-     * @returns {Promise<any>}
+     * @returns {Promise<string>}
      */
     public async getElementAttribute(attribute: string): Promise<string> {
         return await this.element.getAttribute(attribute);
