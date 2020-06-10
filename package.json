@@ -1,36 +1,28 @@
 {
-    "name": "autotest",
+    "name": "automark",
     "author": "Mark Pedersen",
     "description": "An end-to-end testing library using selenium and a Page Object Model (POM) design pattern.",
     "version": "1.0.1",
     "scripts": {
-        "dev": "tsc --watch",
-        "rtest": "ts-node main.ts",
         "test": "mocha -r ts-node/register test/**/*.ts"
     },
     "devDependencies": {
         "@types/chai": "4.1.4",
-        "@types/glob": "7.1.0",
         "@types/image-size": "0.0.29",
         "@types/lodash": "4.14.116",
         "@types/mocha": "7.0.2",
         "@types/node": "12.12.6",
         "@types/pixelmatch": "4.0.0",
         "@types/selenium-webdriver": "3.0.10",
-        "@types/yargs": "12.0.4",
         "chai": "4.1.2",
         "image-size": "0.6.3",
         "mocha": "5.2.0",
-        "mocha-multi-reporters": "1.1.7",
-        "mocha-parallel-tests": "^2.3.0",
         "pixelmatch": "4.0.2",
         "reflect-metadata": "0.1.10",
         "ts-node": "7.0.1"
     },
     "dependencies": {
-        "glob": "7.1.3",
         "selenium-webdriver": "3.6.0",
-        "typescript": "3.9.5",
-        "yargs": "12.0.5"
+        "typescript": "3.9.5"
     }
 }
