@@ -1,3 +1,14 @@
+* Usage
+#+BEGIN_SRC bash
+git clone https://github.com/markrepedersen/automark.git
+cd automark && npm install
+#+END_SRC
+
+* Example
+
+Inside the `src/pages/` directory you can find some demo pages. The following is an example of how to design a test:
+
+#+BEGIN_SRC typescript
 import {should} from "chai";
 import {Browser} from "../../src/lib/utils/browsers/browser";
 import {Chrome} from "../../src/lib/utils/browsers/chrome";
@@ -25,3 +36,5 @@ describe("Browser Tests", function () {
     await browser.quit();
   });
 });
+#+END_SRC
+

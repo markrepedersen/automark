@@ -2,6 +2,14 @@ import {sync} from "glob";
 import * as path from "path";
 import {builder} from "./src/config/cli/commands/run";
 
+export const config: any = {
+  recursive: true,
+  verbose: false,
+  timeout: 325000,
+  headless: false,
+  retries: 0,
+};
+
 export class TestRunner {
   public run(): void {
     const Mocha = require("mocha-parallel-tests").default;
@@ -117,14 +125,6 @@ type Filter = {
 type Exclusions = {
   directories: Array<string>;
   files: Array<string>;
-};
-
-export const config: any = {
-  recursive: true,
-  verbose: false,
-  timeout: 325000,
-  headless: false,
-  retries: 0,
 };
 
 if (require.main && require.main.filename == __filename) {
