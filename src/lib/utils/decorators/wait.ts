@@ -1,5 +1,5 @@
 import {AsyncFunction} from "./utils";
-import {Page} from "..";
+import {Page} from "../../../pages";
 
 /**
  * Uses the browser's load variable to wait a set amount of time after the method executes before continuing.

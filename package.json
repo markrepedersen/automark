@@ -3,10 +3,12 @@
     "author": "Mark Pedersen",
     "description": "An end-to-end testing library using selenium and a Page Object Model (POM) design pattern.",
     "version": "1.0.2",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "dev": "tsc --watch"
     },
-    "devDependencies": {
+    "dependencies": {
         "@types/chai": "4.1.4",
         "@types/image-size": "0.0.29",
         "@types/lodash": "4.14.155",
@@ -15,15 +17,13 @@
         "@types/pixelmatch": "4.0.0",
         "@types/selenium-webdriver": "3.0.10",
         "chai": "4.1.2",
-        "lodash": "4.17.15",
         "image-size": "0.6.3",
-        "mocha": "5.2.0",
+        "lodash": "4.17.15",
+        "mocha": "8.0.1",
         "pixelmatch": "4.0.2",
         "reflect-metadata": "0.1.10",
-        "ts-node": "7.0.1"
-    },
-    "dependencies": {
         "selenium-webdriver": "3.6.0",
+        "ts-node": "7.0.1",
         "typescript": "3.9.5"
     }
 }

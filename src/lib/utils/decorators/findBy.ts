@@ -1,5 +1,6 @@
 import {registerDecorator} from "./utils";
-import {Page, WebComponent} from "..";
+import {WebComponent} from "../components";
+import {Page} from "../../../pages";
 import {By} from "selenium-webdriver";
 
 /**

@@ -1,6 +1,7 @@
 import {error} from "selenium-webdriver";
-import {WebComponent} from "./components/WebComponent";
-import {AwaitableWebComponent, Browser, NewablePage, Page} from '.';
+import {WebComponent, AwaitableWebComponent} from "./components";
+import {Browser} from '.';
+import {Page, NewablePage} from '../../pages';
 
 export type WaitCondition = (browser: Browser) => Promise<boolean>;
 
