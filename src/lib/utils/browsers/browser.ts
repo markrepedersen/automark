@@ -221,7 +221,12 @@ export abstract class Browser {
    */
   private getBrowserArguments(options?: BrowserOptions): Array<string> {
     const args: Array<string> = [];
-
+    if (options?.exit) {
+      process.on("beforeExit", async () => {
+        await this.quit();
+        process.exit(0);
+      });
+    }
     if (options?.maximized) {
       console.log("[INFO] Maximizing screen.");
       args.push("start-maximized");
@@ -798,6 +803,7 @@ export abstract class Browser {
 type Handler = Function | Validatable<Validator>;
 export type BrowserTypes = "chrome" | "edge";
 export type BrowserOptions = {
+  exit?: boolean;
   headless?: boolean;
   maximized?: boolean;
   width?: number;
