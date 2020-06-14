@@ -1,5 +1,17 @@
 * Dependencies
-[[https://chromedriver.chromium.org/][chromedriver]] must be installed.
+If using Chrome, then [[https://chromedriver.chromium.org/][chromedriver]] must be installed. Otherwise, the browser's driver of your choice must be installed.
+
+* Browser Support
+Currently only Chrome and Edge are supported, but adding an additional browser is trivial. 
+The following code adds the Edge browser. Any Edge-specific options can be configured here such as arguments to be passed to the driver.
+
+#+begin_src typescript
+export class Edge extends Browser {
+    public constructor(options?: BrowserOptions) {
+        super('edge', options);
+    }
+}
+#+end_src
 
 * Usage
 #+BEGIN_SRC bash
@@ -7,9 +19,10 @@ npm i --save-dev automark
 cd automark && npm install
 #+END_SRC
 
-* Example
+* Examples
+- You can find [[https://github.com/markrepedersen/skyscraper][a sample project]] that uses the framework here.
 
-Inside the `src/pages/` directory you can find some demo pages. The following is an example of how to design a test. It's using Mocha and Chai, but you can use any testing frameworks you want.
+- The following is an example of how to design a test. It's using Mocha and Chai, but you can use any testing frameworks you want.
 
 #+BEGIN_SRC typescript
 import {should} from "chai";
