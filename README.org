@@ -3,7 +3,7 @@
 
 * Usage
 #+BEGIN_SRC bash
-git clone https://github.com/markrepedersen/automark.git
+npm i --save-dev automark
 cd automark && npm install
 #+END_SRC
 
