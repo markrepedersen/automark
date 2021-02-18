@@ -6,7 +6,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "dev": "tsc --watch"
+        "prepublish": "tsc"
     },
     "dependencies": {
         "@types/chai": "4.1.4",
@@ -18,8 +18,8 @@
         "@types/selenium-webdriver": "3.0.10",
         "chai": "4.1.2",
         "image-size": "0.6.3",
-        "lodash": "4.17.15",
-        "mocha": "8.0.1",
+        "lodash": "^4.17.20",
+        "mocha": "^8.3.0",
         "pixelmatch": "4.0.2",
         "reflect-metadata": "0.1.10",
         "selenium-webdriver": "3.6.0",
