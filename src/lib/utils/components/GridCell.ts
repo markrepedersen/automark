@@ -1,8 +1,6 @@
 import {WebComponent} from "./WebComponent";
 import {Key} from "selenium-webdriver";
-import {log} from "..";
 
-@log
 export class GridCell extends WebComponent {
     public async fillCell(text: string) {
         await this.click();

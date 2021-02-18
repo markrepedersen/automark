@@ -2,7 +2,6 @@ import {WebComponent} from "./WebComponent";
 import {Key} from "selenium-webdriver";
 import {isEmpty} from "lodash";
 import {retry} from "../decorators/retry";
-import {log} from "..";
 
 type ScrollDirection =
     typeof Key.ARROW_RIGHT |
@@ -10,7 +9,6 @@ type ScrollDirection =
     typeof Key.ARROW_UP |
     typeof Key.ARROW_DOWN;
 
-@log
 abstract class ScrollDirectionHandler extends WebComponent {
     /**
      * Checks if scrolling has finished.
@@ -83,7 +81,6 @@ class ScrollRightHandler extends ScrollDirectionHandler {
     }
 }
 
-@log
 export class ScrollBar extends WebComponent {
     /**
      * Scroll DOWN until {@param elementSelector} is found or until it cannot scroll anymore.

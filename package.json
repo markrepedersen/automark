@@ -2,7 +2,7 @@
     "name": "automark",
     "author": "Mark Pedersen",
     "description": "An end-to-end testing library using selenium and a Page Object Model (POM) design pattern.",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {

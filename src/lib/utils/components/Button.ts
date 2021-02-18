@@ -1,7 +1,5 @@
 import {WebComponent} from "./WebComponent";
-import {log} from "..";
 
-@log
 export class Button extends WebComponent {
     public async isDisabled(): Promise<boolean> {
         try {

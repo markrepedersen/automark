@@ -6,7 +6,6 @@ import StaleElementReferenceError = error.StaleElementReferenceError;
 
 export type AwaitableWebComponent<T extends WebComponent> = T | Promise<T>;
 
-@log
 export class WebComponent {
     constructor(public element: WebElement,
                 public selector: string,

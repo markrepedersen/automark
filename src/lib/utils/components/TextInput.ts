@@ -1,10 +1,8 @@
 import {WebComponent} from "./WebComponent";
 import {retry} from "../decorators/retry";
 import {error, IKey, Key} from "selenium-webdriver";
-import {log} from "..";
 import StaleElementReferenceError = error.StaleElementReferenceError;
 
-@log
 export class TextInput extends WebComponent {
     public async clear(): Promise<void> {
         return await this.element.clear();

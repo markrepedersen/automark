@@ -1,9 +1,8 @@
 import {WebComponent} from "./WebComponent";
 import {join} from 'path';
 import * as os from "os";
-import {log} from "..";
 
-@log
+
 export class FileImport extends WebComponent {
     /**
      * Imports a local file from local file system.
